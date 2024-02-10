@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<body bgcolor="#d4a3ae">
+	<h1>Predict Restaurant Ratings</h1>
+
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}" method="post">
+    	<input type="text" name="votes" placeholder="Votes" required="required" />
+        <input type="text" name="has_table_booking" placeholder="Has_Table_booking" required="required" />
+		<input type="text" name="has_online_delivery" placeholder="Has_Online_delivery" required="required" />
+                <input type="text" name="price_range" placeholder="Price_Range" required="required" />
+                <input type="text" name="number_of_cuisines" placeholder="Number_of_Cuisines" required="required" />
+
+        <button type="submit">Predict</button>
+    </form>
+
+   <br>
+   <br>
+    <h2>Rating for Selected Restaurant: {{data}}</h2>
+
+
+</body>
+</html>
